@@ -53,7 +53,7 @@ fun LazyGridDemo(modifier: Modifier = Modifier) {
     showBackground = true
 )
 @Composable
-fun LazyGridDemoPreview() {
+private fun LazyGridDemoPreview() {
     ComposeMasterClassTheme {
         LazyGridDemo()
     }

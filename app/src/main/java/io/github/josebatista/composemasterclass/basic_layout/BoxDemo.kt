@@ -75,7 +75,7 @@ fun BoxDemo(modifier: Modifier = Modifier) {
     backgroundColor = 0xFFF
 )
 @Composable
-fun BoxDemoPreview() {
+private fun BoxDemoPreview() {
     ComposeMasterClassTheme {
         BoxDemo()
     }

@@ -124,7 +124,7 @@ fun RowColumnDemo(modifier: Modifier = Modifier) {
     backgroundColor = 0xFFF
 )
 @Composable
-fun RowColumnDemoPreview() {
+private fun RowColumnDemoPreview() {
     ComposeMasterClassTheme {
         RowColumnDemo()
     }

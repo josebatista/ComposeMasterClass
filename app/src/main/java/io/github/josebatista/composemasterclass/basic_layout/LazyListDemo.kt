@@ -57,7 +57,7 @@ fun LazyListDemo(modifier: Modifier = Modifier) {
     showBackground = true
 )
 @Composable
-fun LazyListDemoPreview() {
+private fun LazyListDemoPreview() {
     ComposeMasterClassTheme {
         LazyListDemo()
     }

@@ -93,7 +93,7 @@ fun FlowLayoutDemo(modifier: Modifier = Modifier) {
     backgroundColor = 0xFFF
 )
 @Composable
-fun FlowLayoutDemoPreview() {
+private fun FlowLayoutDemoPreview() {
     ComposeMasterClassTheme {
         FlowLayoutDemo()
     }
