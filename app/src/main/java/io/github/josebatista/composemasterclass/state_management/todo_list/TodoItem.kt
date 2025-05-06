@@ -5,7 +5,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,9 +23,10 @@ import io.github.josebatista.composemasterclass.ui.theme.ComposeMasterClassTheme
 
 @Composable
 fun TodoItem(
-    modifier: Modifier = Modifier,
-    onCheckedChange: (Boolean) -> Unit,
     todo: Todo,
+    onCheckedChange: (Boolean) -> Unit,
+    onDeletedClick: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     Row(
         modifier = modifier
@@ -49,6 +54,14 @@ fun TodoItem(
                 } else TextDecoration.None
             )
         }
+        IconButton(
+            onClick = onDeletedClick
+        ) {
+            Icon(
+                imageVector = Icons.Default.Delete,
+                contentDescription = "Delete"
+            )
+        }
         Checkbox(
             checked = todo.isChecked,
             onCheckedChange = onCheckedChange
@@ -66,7 +79,8 @@ private fun TodoItemPreview() {
                 description = "Better do this before wife comes home.",
                 isChecked = false
             ),
-            onCheckedChange = {}
+            onCheckedChange = {},
+            onDeletedClick = {}
         )
     }
 }

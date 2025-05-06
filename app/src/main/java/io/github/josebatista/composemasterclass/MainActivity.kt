@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import io.github.josebatista.composemasterclass.state_management.todo_list.TodoListRoot
 import io.github.josebatista.composemasterclass.ui.theme.ComposeMasterClassTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,9 +20,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeMasterClassTheme {
-                Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    TodoListRoot(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
