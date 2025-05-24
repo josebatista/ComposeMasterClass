@@ -4,18 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeGestures
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import io.github.josebatista.composemasterclass.basic_modifier.SpacingModifierDemo
-import io.github.josebatista.composemasterclass.side_effects.HomeWorkSideEffectsRoot
+import io.github.josebatista.composemasterclass.composition_locals.HomeWorkCompositionLocals
+import io.github.josebatista.composemasterclass.composition_locals.LocalSnackbarState
 import io.github.josebatista.composemasterclass.ui.theme.ComposeMasterClassTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,10 +31,10 @@ class MainActivity : ComponentActivity() {
 //                }
 
                 // Scaffold has default paddings values
-                Scaffold(
-                    modifier = Modifier.fillMaxSize(),
-                    contentWindowInsets = WindowInsets.safeGestures
-                ) { innerPadding ->
+//                Scaffold(
+//                    modifier = Modifier.fillMaxSize(),
+//                    contentWindowInsets = WindowInsets.safeGestures
+//                ) { innerPadding ->
 //                    SpacingModifierDemo(
 //                        modifier = Modifier
 //                            .padding(innerPadding)
@@ -130,12 +130,26 @@ class MainActivity : ComponentActivity() {
 //                            .fillMaxSize()
 //                            .padding(innerPadding)
 //                    )
-                    HomeWorkSideEffectsRoot(
+//                    HomeWorkSideEffectsRoot(
+//                        modifier = Modifier
+//                            .fillMaxSize()
+//                            .padding(innerPadding)
+//                    )
+//                    CompositionLocalProvider(
+//                        LocalShape provides RectangleShape
+//                    ) {
+//                        MyShapedButton()
+//                    }
+                Scaffold(
+                    snackbarHost = { SnackbarHost(hostState = LocalSnackbarState.current) }
+                ) { innerPadding ->
+                    HomeWorkCompositionLocals(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding)
                     )
                 }
+//                }
             }
         }
     }
