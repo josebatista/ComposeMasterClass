@@ -15,7 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import io.github.josebatista.composemasterclass.basic_modifier.SpacingModifierDemo
-import io.github.josebatista.composemasterclass.measurements.LazyMindMapFlexibleRoot
+import io.github.josebatista.composemasterclass.side_effects.HomeWorkSideEffectsRoot
 import io.github.josebatista.composemasterclass.ui.theme.ComposeMasterClassTheme
 
 class MainActivity : ComponentActivity() {
@@ -106,7 +106,31 @@ class MainActivity : ComponentActivity() {
 //                            .fillMaxSize()
 //                            .padding(innerPadding)
 //                    )
-                    LazyMindMapFlexibleRoot(
+//                    LazyMindMapFlexibleRoot(
+//                        modifier = Modifier
+//                            .fillMaxSize()
+//                            .padding(innerPadding)
+//                    )
+//                    var toggle by remember { mutableStateOf(false) }
+//                    if (!toggle) {
+//                        DisposableEffectDemo()
+//                    }
+//                    Button(
+//                        onClick = { toggle = !toggle },
+//                        modifier = Modifier
+//                            .padding(innerPadding)
+//                            .fillMaxSize()
+//                            .wrapContentSize()
+//                    ) {
+//                        Text("Toggle")
+//                    }
+//                    RememberUpdatedStateDemo(modifier = Modifier.padding(innerPadding))
+//                    LaunchedEffectDemo2(
+//                        modifier = Modifier
+//                            .fillMaxSize()
+//                            .padding(innerPadding)
+//                    )
+                    HomeWorkSideEffectsRoot(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding)
