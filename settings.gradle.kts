@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ComposeMasterClass"
 include(":app")
+include(":baselineprofile")

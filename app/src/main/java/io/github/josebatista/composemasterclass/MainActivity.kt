@@ -9,13 +9,13 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarHost
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.tooling.preview.Preview
 import io.github.josebatista.composemasterclass.basic_modifier.SpacingModifierDemo
-import io.github.josebatista.composemasterclass.composition_locals.HomeWorkCompositionLocals
-import io.github.josebatista.composemasterclass.composition_locals.LocalSnackbarState
+import io.github.josebatista.composemasterclass.performance.homework.ListItemScreenRoot
 import io.github.josebatista.composemasterclass.ui.theme.ComposeMasterClassTheme
 
 class MainActivity : ComponentActivity() {
@@ -140,16 +140,72 @@ class MainActivity : ComponentActivity() {
 //                    ) {
 //                        MyShapedButton()
 //                    }
+//                Scaffold(
+//                    snackbarHost = { SnackbarHost(hostState = LocalSnackbarState.current) }
+//                ) { innerPadding ->
+////                    HomeWorkCompositionLocals(
+////                        modifier = Modifier
+////                            .fillMaxSize()
+////                            .padding(innerPadding)
+////                    )
+////                    MyScreen(
+////                        modifier = Modifier
+////                            .fillMaxSize()
+////                            .padding(innerPadding)
+////                    )
+//                    ImageLoading(
+//                        modifier = Modifier
+//                            .fillMaxSize()
+//                            .padding(innerPadding)
+//                    )
+//                }
+//                LazyListPerformance()
+//                    PhotoPickerScreen(
+//                        compressor = remember {
+//                            BitmapCompressor(applicationContext)
+//                        },
+//                        modifier = Modifier
+//                            .fillMaxSize()
+//                            .padding(innerPadding)
+//                    )
+//                    KeysCustomLayout(
+//                        modifier = Modifier
+//                            .fillMaxSize()
+//                            .padding(innerPadding)
+//                    )
+//                    MovableContent(
+//                        modifier = Modifier
+//                            .fillMaxSize()
+//                            .padding(innerPadding)
+//                    )
+//                }
+//                DeferredStateReads(
+//                    modifier = Modifier
+//                        .fillMaxSize()
+//                )
                 Scaffold(
-                    snackbarHost = { SnackbarHost(hostState = LocalSnackbarState.current) }
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .semantics {
+                            testTagsAsResourceId = true
+                        }
                 ) { innerPadding ->
-                    HomeWorkCompositionLocals(
+//                    OverdrawDemo(
+//                        modifier = Modifier
+//                            .fillMaxSize()
+//                            .padding(innerPadding)
+//                    )
+//                    LazyListPerformance(
+//                        modifier = Modifier
+//                            .fillMaxSize()
+//                            .padding(innerPadding)
+//                    )
+                    ListItemScreenRoot(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding)
                     )
                 }
-//                }
             }
         }
     }
